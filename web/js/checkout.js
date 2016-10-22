@@ -27,6 +27,11 @@ $(document).ready(function() {
 			$('#discount').val(0);
 			alert('Invalid promotion code');
 		}
+		if ($('#discount').val()=='0'){
+			$('#code').val('');
+		}
+			
+		
 	});
 
 	
