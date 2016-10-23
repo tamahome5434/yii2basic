@@ -31,32 +31,32 @@ class m161022_022920_create_products_table extends Migration
             'image' => 'lip.jpg',
             'brand' => 'Yadah',
             'pname' => 'Yadah Pure Green Emulsion',
-            'sprice' => '139.00',
-            'rprice' => '89.00',
+ 	    'sprice' => '89.00',
+            'rprice' => '139.00',
         ]);
 		$this->insert('products', [
             'id' => '2',
             'image' => 'none.jpg',
             'brand' => 'Skills',
             'pname' => 'Black Head Pure Cleanser Set',
-            'sprice' => '165.00',
-            'rprice' => '115.00',
+            'sprice' => '115.00',
+            'rprice' => '165.00',
         ]);
 		$this->insert('products', [
             'id' => '3',
             'image' => 'none.jpg',
             'brand' => 'Innisfree',
             'pname' => 'Jeju Volcanic 3 in 1 Nose Pack',
-            'sprice' => '249.00',
-            'rprice' => '199.00',
+            'sprice' => '199.00',
+            'rprice' => '249.00',
         ]);
 		$this->insert('products', [
             'id' => '4',
             'image' => 'none.jpg',
             'brand' => 'Yadah',
             'pname' => 'Yadah Nail Collection',
-            'sprice' => '105.90',
-            'rprice' => '20.50',
+            'sprice' => '20.50',
+            'rprice' => '105.90',
         ]);
     }
 

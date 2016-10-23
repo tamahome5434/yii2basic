@@ -69,7 +69,7 @@ $originalPrice= $qty*$rprice;
 	<div class="row" style='padding-top:5px;'>
 	
 		<div style='width:50%;float:left;'><?= Html::textInput('code','',['class'=>'form-control','placeholder'=>'promotion code','id'=>'code', 'style'=>'text-transform:uppercase'])?></div>
-		<div style='width:50%;float:left'><?= Html::button('Apply', ['class' => 'btn btn-primary', 'id'=>'apply']) ?></div>
+		<div style='width:50%;float:left'><?= Html::button('Apply', ['class' => 'btn btn-primary', 'id'=>'apply']) ?>(-RM <span id='discount'></span>)</div>
 		
 	</div>
 	<div class="row" style='padding-top:5px;'>
@@ -77,8 +77,6 @@ $originalPrice= $qty*$rprice;
 		<div style='width:50%;float:left'>	RM <span id='shipping'></span></div>
 	</div>
 	<?= Html::hiddenInput('id', $model->id) ?>
-	<?= Html::hiddenInput('discount', '', ['id'=>'discount']) ?>
-	<?= Html::hiddenInput('ship','',['id'=>'ship']) ?>
 	<?= Html::hiddenInput('qty', $qty, ['id'=>'qty']) ?>
 	<?= Html::hiddenInput('subtotal', $subtotal, ['id'=>'subtotal']) ?>
 	<div class="row" style='padding-top:5px;'>
@@ -86,5 +84,3 @@ $originalPrice= $qty*$rprice;
 	</div>
 	<?php ActiveForm::end(); ?>
 </div>
-
-
