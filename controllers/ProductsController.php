@@ -138,13 +138,46 @@ class ProductsController extends Controller
     {
 		$id=Yii::$app->request->post('id');
 		$qty=Yii::$app->request->post('qty');
-		$discount=Yii::$app->request->post('discount');
-		$shipping=Yii::$app->request->post('ship');
+		// $discount='';
+		// $shipping=Yii::$app->request->post('ship');
 		$subtotal=Yii::$app->request->post('subtotal');
 		$area=Yii::$app->request->post('country');
-		$code=Yii::$app->request->post('code');
+		$code=strtoupper(Yii::$app->request->post('code'));
 		$summary=Products::findOne($id);
+		
+		if ($code=='OFF5PC'){
+			if($qty>=2)
+				$discount=$subtotal*0.05;
+			else
+				$discount=0;
+		}
+		elseif ($code=='GIVEME15'){
+			if($subtotal>=100)
+				$discount=15;
+			else
+				$discount=0;
+		}
+		else 
+			$discount=0;
 
+		if($area=='malaysia'){
+			if($qty>=2||$subtotal>=150)
+				$shipping=0;
+			else
+				$shipping=10;
+		}
+		elseif($area=='singapore'){
+			if($subtotal>=300)
+				$shipping=0;
+			else
+				$shipping=20;
+		}
+		elseif($area=='brunei'){
+			if($subtotal>=300)
+				$shipping=0;
+			else
+				$shipping=25;
+		}
 		return $this->render('summary', [
             'model' => $summary,
 			'quantity'=>$qty,
